@@ -1,0 +1,38 @@
+{
+    "/static/css/all.css": {
+        "type": "style",
+        "weight": 1
+    },
+    "/static/css/bootstrap.min.css": {
+        "type": "style",
+        "weight": 1
+    },
+    "/static/css/bootstrap-table.css": {
+        "type": "style",
+        "weight": 1
+    },
+    "/static/css/bootstrap-theme.min.css": {
+        "type": "style",
+        "weight": 1
+    },
+    "/static/js/bootstrap.min.js": {
+        "type": "script",
+        "weight": 1
+    },
+    "/static/js/bootstrap-table.min.js": {
+        "type": "script",
+        "weight": 1
+    },
+    "/static/js/jquery.min.js": {
+        "type": "script",
+        "weight": 1
+    },
+    "/static/fonts/glyphicons-halflings-regular.woff": {
+        "type": "font",
+        "weight": 1
+    },
+    "/templates/index-v5.html": {
+        "type": "document",
+        "weight": 1
+    }
+}

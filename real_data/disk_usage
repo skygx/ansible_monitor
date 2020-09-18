@@ -1,0 +1,2 @@
+k8s-node2 | CHANGED | rc=0 | (stdout) /dev/mapper/centos-root 36%\n/dev/sda1 14%
+k8s-node1 | CHANGED | rc=0 | (stdout) /dev/mapper/centos-root 83%\n/dev/sda1 14%

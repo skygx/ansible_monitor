@@ -1,0 +1,7 @@
+Flask_Bootstrap==3.3.7.0
+Flask==1.0.3
+Flask_Moment==0.10.0
+gunicorn
+gevent
+WTForms==2.3.3
+Flask_WTF==0.14.3

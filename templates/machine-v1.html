@@ -1,0 +1,143 @@
+{% extends "base-v2.html" %}
+
+{% block scripts %}
+{{ super() }}
+    <script>
+            var $table = $('#showTable');
+            $table.bootstrapTable({
+                    method: 'GET',                      //请求方式（*）
+                    url: "/machdata",
+                    dataType: 'json',
+                    dataField: "rows",
+                    totalField: "total",
+                    {#striped: true,                      //是否显示行间隔色#}
+                    {#cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）#}
+                    pagination: true,                   //是否显示分页（*）
+                    {#sortable: true,                     //是否启用排序#}
+                    {#sortOrder: "desc",                   //排序方式#}
+                    {#sortName: 'cpusage',#}
+                    pagination: true,//分页
+                    paginationPreText: '上一页',
+                    paginationNextText: '下一页',
+                    {#sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）#}
+                    {#pageNumber: 1,                      //初始化加载第一页，默认第一页,并记录#}
+                    {#pageSize: rows,                     //每页的记录行数（*）#}
+                    pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）
+                    search: true,                       //是否显示表格搜索
+                    showExport: true,
+                    exportTypes:['excel','csv'],                  //导出文件类型
+                    exportDataType: "basic",              //basic', 'all', 'selected'.
+                    buttonsAlign:"right",  //按钮位置
+                    exportOptions:{
+                        //ignoreColumn: [0,0],            //忽略某一列的索引
+                        fileName: 'ansible虚拟机',              //文件名称设置
+                        worksheetName: 'ansible虚拟机',          //表格工作区名称
+                        tableName: 'ansible虚拟机',
+                        excelstyles: ['background-color', 'color', 'font-size', 'font-weight'],
+                        //onMsoNumberFormat: DoOnMsoNumberFormat
+                    },
+                    {#strictSearch: true,#}
+                    {#showColumns: true,                  //是否显示所有的列（选择显示的列）#}
+                    {#showRefresh: true,                  //是否显示刷新按钮#}
+                    {#responseHandler: responseHandler,//接受后台传过来的值进行绑定处理的函数#}
+                    {#minimumCountColumns: 2,             //最少允许的列数#}
+                    clickToSelect: true,                //是否启用点击选中行
+                    {#//height: 500,                      //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度#}
+                    {#uniqueId: "ID",                     //每一行的唯一标识，一般为主键列#}
+                    {#showToggle: true,                   //是否显示详细视图和列表视图的切换按钮#}
+                    {#cardView: false,                    //是否显示详细视图#}
+                    {#detailView: false,                  //是否显示父子表#}
+                    columns:
+                        [{
+                            //field: 'Number',//可不加
+                            title: 'Index',//标题  可不加
+                            align: 'center',
+                            formatter: function (value, row, index) {
+                                return index + 1;
+                            }
+                        },
+                            {
+                                title: 'HostName',
+                                field: 'host',
+                                align: 'center',
+                                valign: "middle"
+                            },
+                            {
+                                title: 'IPv4',
+                                field: 'ip',
+                                align: 'left',
+                                valign: "middle"
+                            },
+                            {
+                                title: 'Machine',
+                                field: 'machine',
+                                align: 'left',
+                                valign: "middle"
+                            },
+                            {
+                                title: 'Product',
+                                field: 'product',
+                                align: 'left',
+                                valign: "middle"
+                            },
+                            {
+                                title: 'OS',
+                                field: 'os',
+                                align: 'left',
+                                valign: "middle"
+                            },
+                            {
+                                title: 'Kernel',
+                                field: 'kernel',
+                                align: 'left',
+                                valign: "middle"
+                            },
+                            {
+                                title: 'CPU',
+                                field: 'cpu',
+                                align: 'left',
+                                valign: "middle"
+                            },
+                            {
+                                title: 'CNum',
+                                field: 'cpu_count',
+                                align: 'left',
+                                valign: "middle"
+                            },
+                            {
+                                title: 'Cores',
+                                field: 'cpu_cores',
+                                align: 'left',
+                                valign: "middle"
+                            },
+                            {
+                                title: 'MTotal(MB)',
+                                field: 'memtotal',
+                                align: 'left',
+                                valign: "middle",
+                                sortable: true
+                            },
+
+                        ],
+                }
+            );
+
+    </script>
+{% endblock %}
+
+{% block page_content %}
+
+		<table  id="showTable"
+                data-toggle="table"
+                class="table table-hover table-striped"
+			    data-search="true"
+			    data-pagination="true"
+				data-click-to-select="true"
+				data-show-refresh="true"
+				data-show-toggle="true"
+				data-show-columns="true"
+				data-halign="center"
+			    data-sorting ="true">
+        </table>
+
+{% endblock %}
