@@ -2,22 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38b66baa-3580-43f7-865e-9b903357a1d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-v4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-v5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/graph/elastic-1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/graph/k8s-debian.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/graph/k8s-master.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/graph/k8s-node1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/graph/k8s-node2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/echarts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/graph/elastic-1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/graph/k8s-debian.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/graph/k8s-master.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/graph/k8s-node1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/graph/k8s-node2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/real-v2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/real-v3.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../flask-monitor/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../flask-monitor/templates/index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../node1-study/.idea/deployment.xml" afterDir="false" />
@@ -28,22 +12,11 @@
       <change afterPath="$PROJECT_DIR$/../node1-study/sshe_paramiko.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../node1-study/watch_dir-v1.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../python_demo-master/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63d6bbd4056a886bbe324555b9e7aca8247ba199" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63d6bbd4056a886bbe324555b9e7aca8247ba199" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/f/efa9b8da9ae1d5747b19b4ac99ab049e3251653d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/CreateDB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetData_v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/GetData_v2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-v3.py" beforeDir="false" afterPath="$PROJECT_DIR$/app-v3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ansible_real.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphIOPS.py" beforeDir="false" afterPath="$PROJECT_DIR$/graphIOPS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-v5.py" beforeDir="false" afterPath="$PROJECT_DIR$/app-v5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/ansible.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ansible.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/real_data/iops" beforeDir="false" afterPath="$PROJECT_DIR$/real_data/iops" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/result/data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base-v2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base-v2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/real-v1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/real-v1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index-v5.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index-v5.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../visualable/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../visualable/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../visualable/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../visualable/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../visualable/bubble.jpg" beforeDir="false" />
@@ -78,7 +51,7 @@
     <SUITE FILE_PATH="coverage/ansible_monitor$graphIOPS.coverage" NAME="graphIOPS Coverage Results" MODIFIED="1600505110347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ansible_monitor$CreateDB.coverage" NAME="CreateDB Coverage Results" MODIFIED="1600434490303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ansible_monitor$Flask__app_py_.coverage" NAME="Flask (app-v1.py) Coverage Results" MODIFIED="1599456549043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ansible_monitor$Flask__app_v5_py_.coverage" NAME="Flask (app-v5.py) Coverage Results" MODIFIED="1600652025063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ansible_monitor$Flask__app_v5_py_.coverage" NAME="Flask (app-v5.py) Coverage Results" MODIFIED="1600653319650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -133,34 +106,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app-v4.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="136" column="56" lean-forward="true" selection-start-line="136" selection-start-column="56" selection-end-line="136" selection-end-column="56" />
-              <folding>
-                <element signature="e#0#65#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app-v5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-586">
-              <caret line="153" column="61" selection-start-line="153" selection-start-column="61" selection-end-line="153" selection-end-column="61" />
+            <state relative-caret-position="414">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="e#0#65#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/946eea97-6caa-474f-9586-33862678e5ab/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="47" selection-start-column="47" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -168,32 +120,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base-v2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1625">
-              <caret line="65" column="54" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
+            <state relative-caret-position="442">
+              <caret line="73" column="19" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/graphIOPS.py">
+        <entry file="file://$PROJECT_DIR$/templates/index-v5.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="950">
-              <caret line="42" column="38" selection-start-line="27" selection-start-column="4" selection-end-line="42" selection-end-column="38" />
-              <folding>
-                <element signature="e#318#332#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="367">
+              <caret line="218" selection-start-line="218" selection-start-column="2" selection-end-line="219" selection-end-column="70" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GetData_v2.py">
+        <entry file="file://$PROJECT_DIR$/templates/machine-v1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4800">
-              <caret line="196" column="25" selection-start-line="196" selection-start-column="25" selection-end-line="196" selection-end-column="25" />
-              <folding>
-                <element signature="e#849#863#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="3200">
+              <caret line="128" selection-start-line="128" selection-end-line="128" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/real-v1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4275">
+              <caret line="171" column="13" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -263,7 +218,6 @@
         <option value="$PROJECT_DIR$/templates/index-v6.html" />
         <option value="$PROJECT_DIR$/real_data/mem_usage" />
         <option value="$PROJECT_DIR$/app-v2.py" />
-        <option value="$PROJECT_DIR$/templates/index-v5.html" />
         <option value="$PROJECT_DIR$/templates/base-v1.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/machine-v1.html" />
@@ -276,14 +230,15 @@
         <option value="$PROJECT_DIR$/GetData_v2.py" />
         <option value="$PROJECT_DIR$/graphIOPS.py" />
         <option value="$PROJECT_DIR$/app-v3.py" />
-        <option value="$PROJECT_DIR$/templates/base-v2.html" />
         <option value="$PROJECT_DIR$/templates/real-v2.html" />
         <option value="$PROJECT_DIR$/result/graph.json" />
         <option value="$PROJECT_DIR$/templates/real-v3.html" />
         <option value="$PROJECT_DIR$/real_data/iops" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/946eea97-6caa-474f-9586-33862678e5ab/console.sql" />
-        <option value="$PROJECT_DIR$/app-v5.py" />
         <option value="$PROJECT_DIR$/app-v4.py" />
+        <option value="$PROJECT_DIR$/templates/index-v5.html" />
+        <option value="$PROJECT_DIR$/templates/base-v2.html" />
+        <option value="$PROJECT_DIR$/app-v5.py" />
       </list>
     </option>
   </component>
@@ -337,12 +292,6 @@
               <item name="ansible_monitor" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="ansible_monitor" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="graph" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -562,12 +511,12 @@
       <workItem from="1600583570728" duration="1408000" />
       <workItem from="1600589374049" duration="8920000" />
       <workItem from="1600600483834" duration="2237000" />
-      <workItem from="1600651265112" duration="614000" />
+      <workItem from="1600651265112" duration="1989000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170377000" />
+    <option name="totallyTimeSpent" value="171752000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -580,14 +529,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info x="1118" y="161" width="431" height="596" id="Project" order="2" type="WINDOWED" weight="0.25373134" />
+      <window_info x="1118" y="161" width="431" height="596" id="Project" order="2" type="WINDOWED" visible="true" weight="0.25373134" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3275488" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30368763" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30368763" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -604,7 +552,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.17110874" />
+      <window_info anchor="right" id="Database" order="4" weight="0.17110874" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,13 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index-v5.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="201" lean-forward="true" selection-start-line="201" selection-end-line="201" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index-v4.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="587">
@@ -708,13 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="511">
           <caret line="68" column="24" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/machine-v1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="120" column="26" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -746,13 +680,6 @@
             <caret line="5" column="41" lean-forward="true" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/real-v1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="170" selection-start-line="170" selection-end-line="170" />
         </state>
       </provider>
     </entry>
@@ -861,57 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/946eea97-6caa-474f-9586-33862678e5ab/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="47" selection-start-column="47" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base-v2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1625">
-          <caret line="65" column="54" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graphIOPS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="42" column="38" selection-start-line="27" selection-start-column="4" selection-end-line="42" selection-end-column="38" />
-          <folding>
-            <element signature="e#318#332#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GetData_v2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4800">
-          <caret line="196" column="25" selection-start-line="196" selection-start-column="25" selection-end-line="196" selection-end-column="25" />
-          <folding>
-            <element signature="e#849#863#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/real-v3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="211" column="56" selection-start-line="211" selection-start-column="56" selection-end-line="211" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app-v5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-586">
-          <caret line="153" column="61" selection-start-line="153" selection-start-column="61" selection-end-line="153" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/graph/elastic-1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -928,8 +804,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app-v4.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="156" column="58" lean-forward="true" selection-start-line="156" selection-start-column="58" selection-end-line="156" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/real-v3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="211" column="56" selection-start-line="211" selection-start-column="56" selection-end-line="211" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/946eea97-6caa-474f-9586-33862678e5ab/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphIOPS.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
-          <caret line="136" column="56" lean-forward="true" selection-start-line="136" selection-start-column="56" selection-end-line="136" selection-end-column="56" />
+          <caret line="35" column="34" lean-forward="true" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+          <folding>
+            <element signature="e#318#332#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GetData_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2425">
+          <caret line="196" column="25" selection-start-line="196" selection-start-column="25" selection-end-line="196" selection-end-column="25" />
+          <folding>
+            <element signature="e#849#863#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index-v5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="218" selection-start-line="218" selection-start-column="2" selection-end-line="219" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/machine-v1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3200">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/real-v1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4275">
+          <caret line="171" column="13" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base-v2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="73" column="19" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-v5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
           </folding>

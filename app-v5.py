@@ -2,7 +2,7 @@ from flask import Flask,render_template,request,jsonify,send_file
 # import json
 import os as o
 from flask_bootstrap import Bootstrap
-from flask_moment import Moment
+# from flask_moment import Moment
 from datetime import datetime
 import logging
 from pyecharts.charts import Line,Funnel
@@ -28,7 +28,7 @@ logger.addHandler(console)
 
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
-moment = Moment(app)
+# moment = Moment(app)
 app.config['SECRET_KEY'] = 'hard to guess string'
 data_dir='./data'
 real_dir='./real_data'
@@ -142,7 +142,7 @@ def real_info():
 def machine_msg():
     time=datetime.utcnow()
     logger.info(time)
-    return render_template('machine-v1.html', current_time=time)
+    return render_template('machine-v1.html')
 
 #添加获取iops数据并传回echarts
 @app.route('/real')
@@ -151,7 +151,7 @@ def real_msg():
     logger.info(time)
 
     # d.T.to_json('./result/graph.json')
-    return render_template('real-v3.html', current_time=time)
+    return render_template('real-v3.html')
 
 #pyecharts 输出曲线
 @app.route('/<string:hostname>',methods=['POST', 'GET'])
@@ -197,7 +197,7 @@ def main_page():
     time = datetime.utcnow()
     logger.info(time)
     print(time)
-    return render_template('base-v2.html', current_time=time)
+    return render_template('base-v2.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
