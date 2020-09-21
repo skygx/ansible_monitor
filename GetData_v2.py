@@ -26,6 +26,7 @@ import logging
 import json
 import datetime
 import pymysql
+import sqlite3
 
 logger = logging.getLogger(__name__)
 logger.setLevel(level=logging.INFO)
@@ -42,11 +43,13 @@ logger.addHandler(console)
 
 data_dir='./data'
 real_dir='./real_data'
-db_dir='./db_data/ansible_real.db'
+db_dir='./db_data/ansible.db'
 Today = datetime.datetime.now().strftime('%Y-%m-%d')
 Lastday = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime('%Y-%m-%d')
 
 class DBoper():
+
+    '''mysql 数据库设置
     def __init__(self,host,user,passwd,database):
         self.host = host
         self.user = user
@@ -54,7 +57,6 @@ class DBoper():
         self.passwd = passwd
 
     def db_insert_data(self,sql):
-
         conn = pymysql.connect(
             host=self.host,
             user=self.user,
@@ -73,7 +75,6 @@ class DBoper():
         print("Data insert successfully")
         c.close()
         conn.close()
-        # self.conn.close()
 
     def db_select_data(self,sql):
         conn = pymysql.connect(
@@ -92,6 +93,35 @@ class DBoper():
         print("Data select successfully")
         c.close()
         conn.close()
+
+        return d
+        '''
+
+    '''
+    sqlit3数据库
+    '''
+    def __init__(self,path):
+        self.path = path
+
+    def db_insert_data(self,sql):
+
+        conn = sqlite3.connect(self.path)
+        cursor = conn.cursor()
+        cursor.execute(sql)
+        conn.commit()
+        cursor.close()
+        conn.close()
+
+    def db_select_data(self, sql):
+        conn = sqlite3.connect(self.path)
+        cursor = conn.cursor()
+        cursor.execute(sql)
+        data = cursor.fetchone()
+        d = list(data)[0]
+        if d is None:
+            d = 0
+        cursor.close()
+        conn.close()
         return d
 
 
@@ -102,7 +132,9 @@ class GetData():
         self.riops_temp = 0
         self.wiops_temp = 0
         self.today = datetime.datetime.today()
-        self.db = DBoper('localhost','root','root','ansible')
+
+        # self.db = DBoper('localhost','root','root','ansible')    #mysql数据库配置
+        self.db = DBoper(db_dir)
 
     def get_cpu_load(self):
 
@@ -140,7 +172,6 @@ class GetData():
 
     def max_riops(self,riops):
         sql = f'select max(riops) from ansible where name="{self.hostname}" and date like "{Today}%"'
-        print(sql)
         temp_riops = self.db.db_select_data(sql)
         if riops > temp_riops:
             self.riops_temp = riops
@@ -149,7 +180,6 @@ class GetData():
 
     def max_wiops(self,wiops):
         sql = f'select max(wiops) from ansible where name="{self.hostname}" and date like "{Today}%"'
-        print(sql)
         temp_wiops = self.db.db_select_data(sql)
         if wiops > temp_wiops:
             self.wiops_temp = wiops
@@ -158,13 +188,11 @@ class GetData():
 
     def lastday_riops(self):
         sql = f'select max(riops) from ansible where name="{self.hostname}" and date like "{Lastday}%"'
-        print(sql)
         temp_riops = self.db.db_select_data(sql)
         return temp_riops
 
     def lastday_wiops(self):
         sql = f'select max(wiops) from ansible where name="{self.hostname}" and date like "{Lastday}%"'
-        print(sql)
         temp_wiops = self.db.db_select_data(sql)
         return temp_wiops
 
@@ -182,7 +210,6 @@ class GetData():
                 self.max_riops(float(riops))
                 wiops= output.split(' ')[2]
                 self.max_wiops(float(wiops))
-                # print(f'read:{riops} write:{wiops}')
                 return [riops, wiops]
         return [0,0]
 
@@ -208,6 +235,7 @@ class GetData():
         data=[]
         key = ['host', 'ip', 'product', 'machine', 'os', 'kernel', 'cpu', 'cpu_count', 'cpu_cores', 'memtotal',
                'memusage', 'diskusage', 'cpusage', 'cpu5', 'riops', 'wiops','iowait']
+
         with open(f'{data_dir}/{self.hostname}', 'r', encoding='utf8')as fp:
             json_data = json.load(fp)
 
@@ -268,8 +296,6 @@ class GetData():
         lwiops = self.lastday_wiops()
 
         sql = "insert into ansible (name,date,WIOPS,RIOPS) values ('{}','{}',{},{})".format(host,nowTime,wiops,riops)
-        print(wiops,riops,twiops,triops)
-        print(sql)
 
         self.db.db_insert_data(sql)
 

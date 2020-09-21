@@ -13,9 +13,9 @@
                     {#striped: true,                      //是否显示行间隔色#}
                     {#cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）#}
                     pagination: true,                   //是否显示分页（*）
-                    sortable: true,                     //是否启用排序
-                    sortOrder: "desc",                   //排序方式
-                    sortName: 'cpusage',
+                    {#sortable: true,                     //是否启用排序#}
+                    {#sortOrder: "desc",                   //排序方式#}
+                    {#sortName: 'cpusage',#}
                     pagination: true,//分页
                     paginationPreText: '上一页',
                     paginationNextText: '下一页',
@@ -60,7 +60,14 @@
                                 title: 'HostName',
                                 field: 'host',
                                 align: 'center',
-                                valign: "middle"
+                                valign: "middle",
+                                formatter: function(value, row, index) {
+                                    console.log(value)
+                                    return [
+					                            '<a data-toggle="modal" data-target="#myModal" href="/static/graph/'+ value +'.html">'+ value +'</a>'
+					                            {#'<a href="/'+value+'" >'+value+'</a>'#}
+				                            ]
+                                }
                             },
                             {
                                 title: 'IPv4',
@@ -74,7 +81,13 @@
                                 field: 'memusage',
                                 align: 'left',
                                 valign: "middle",
-                                sortable: true
+                                sortable: true,
+                                 formatter: function (value,row,index) {
+                                    var res = value * 1
+                                    if (value != null) {
+                                        return "<div class='progress'><div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100' style='width:"+res+"%'>"+ res +" </div></div>"
+                                    }
+                                }
                             },
                             {
                                 title: 'Disk(%)',
@@ -89,13 +102,12 @@
                                 align: 'left',
                                 valign: "middle",
                                 sortable: true,
-                                {#formatter: function (value,row,index) {#}
-                                {#    if (value != null){#}
-                                {#        return "<div class='progress'>" +#}
-                                {#                "<div class='progress-bar' role='progressbar' aria-valuenow='50' aria-valuemin='0' aria-valuemax='100' style='width:" +#}
-                                {#                value.toFixed(2) + "%'>" + value.toFixed(2) + "</div></div>"#}
-                                {#    }#}
-
+                                formatter: function (value,row,index) {
+                                    var res = value * 1
+                                    if (value != null) {
+                                        return "<div class='progress'><div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100' style='width:"+res+"%'>"+ res +" </div></div>"
+                                    }
+                                }
                             },
                             {
                                 title: 'CPU1',
@@ -169,7 +181,90 @@
             );
             $table.bootstrapTable('refresh', {url: '/realdata'});
 
+            var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'IOPS'
+            },
+            tooltip: {},
+            legend: {
+                data:['WIOPS','RIOPS']
+            },
+            xAxis: {
+                data: []
+            },
+            yAxis: {},
+            series: [{
+                name: 'WIOPS',
+                type: 'line',
+                data: []
+            },{
+                name: 'RIOPS',
+                type: 'line',
+                data: []
+            }
+            ]
+        };
+
+        {#移除数据，让对话框能够在每次打开时重新加载页面#}
+        $("#myModal").on("hidden.bs.modal", function() {
+            $(this).removeData("bs.modal");
+        });
+
+        // 使用刚指定的配置项和数据显示图表。
+        {#myChart.setOption(option);#}
+        {#var date = [];    //类别数组（实际用来盛放X轴坐标值）#}
+        {#var wiops = [];#}
+        {#var riops = [];#}
+        {#$.ajax({#}
+        {#    type: 'get',#}
+            {#url: '/static/data/graph.json',//请求数据的地址#}
+        {#    url: '/k8s-node2',//请求数据的地址#}
+        {#    dataType: "json",#}
+        {#    success: function (result) {#}
+        {#    //请求成功时执行该函数内容，result即为服务器返回的json对象#}
+        {#            json_data=JSON.parse(result)#}
+        {#            console.info(json_data['k8s-node2'])#}
+                    {#console.info(json_data['value'])#}
+        {#    $.each(result, function (index, item) {#}
+        {#        date.push(item.date);    //挨个取出类别并填入类别数组#}
+        {#        wiops.push(item.WIOPS);#}
+        {#        riops.push(item.RIOPS);#}
+        {#    });#}
+    {#        myChart.hideLoading();    //隐藏加载动画#}
+    {#        myChart.setOption({        //加载数据图表#}
+    {#            xAxis: {#}
+    {#                data: date#}
+    {#            },#}
+    {#            series: [{#}
+    {#                data: wiops#}
+    {#            },#}
+    {#            {#}
+    {#                data: riops#}
+    {#            }]#}
+    {#        });#}
+    {#    }#}
+    {# });#}
+
     </script>
+    <style>
+    .modal-dialog {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        }
+
+    .modal-content {
+        overflow-y: scroll;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        }
+    </style>
 {% endblock %}
 
 {% block page_content %}
@@ -186,4 +281,23 @@
 				data-halign="center"
 			    data-sorting ="true">
         </table>
+
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel">IOPS</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="main">    </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+<!-- /.modal -->
 {% endblock %}

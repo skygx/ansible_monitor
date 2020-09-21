@@ -60,7 +60,12 @@
                                 title: 'HostName',
                                 field: 'host',
                                 align: 'center',
-                                valign: "middle"
+                                valign: "middle",
+                                formatter: function(value, row, index) {
+                                    return [
+					                            '<a href="/'+value+'">'+value+'</a>'
+				                            ].join("")
+                                }
                             },
                             {
                                 title: 'IPv4',
@@ -74,7 +79,13 @@
                                 field: 'memusage',
                                 align: 'left',
                                 valign: "middle",
-                                sortable: true
+                                sortable: true,
+                                 formatter: function (value,row,index) {
+                                    var res = value * 1
+                                    if (value != null) {
+                                        return "<div class='progress'><div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100' style='width:"+res+"%'>"+ res +" </div></div>"
+                                    }
+                                }
                             },
                             {
                                 title: 'Disk(%)',
@@ -89,13 +100,12 @@
                                 align: 'left',
                                 valign: "middle",
                                 sortable: true,
-                                {#formatter: function (value,row,index) {#}
-                                {#    if (value != null){#}
-                                {#        return "<div class='progress'>" +#}
-                                {#                "<div class='progress-bar' role='progressbar' aria-valuenow='50' aria-valuemin='0' aria-valuemax='100' style='width:" +#}
-                                {#                value.toFixed(2) + "%'>" + value.toFixed(2) + "</div></div>"#}
-                                {#    }#}
-
+                                formatter: function (value,row,index) {
+                                    var res = value * 1
+                                    if (value != null) {
+                                        return "<div class='progress'><div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100' style='width:"+res+"%'>"+ res +" </div></div>"
+                                    }
+                                }
                             },
                             {
                                 title: 'CPU1',
@@ -169,6 +179,34 @@
             );
             $table.bootstrapTable('refresh', {url: '/realdata'});
 
+            var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'IOPS'
+            },
+            tooltip: {},
+            legend: {
+                data:['WIOPS','RIOPS']
+            },
+            xAxis: {
+                data: []
+            },
+            yAxis: {},
+            series: [{
+                name: 'WIOPS',
+                type: 'line',
+                data: []
+            },{
+                name: 'RIOPS',
+                type: 'line',
+                data: []
+            }
+            ]
+        };
+
+
     </script>
 {% endblock %}
 
@@ -186,4 +224,5 @@
 				data-halign="center"
 			    data-sorting ="true">
         </table>
+
 {% endblock %}

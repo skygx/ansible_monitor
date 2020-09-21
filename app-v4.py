@@ -1,10 +1,14 @@
-from flask import Flask,render_template,request,jsonify
+from flask import Flask,render_template,request,jsonify,send_file
 # import json
 import os as o
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from datetime import datetime
 import logging
+from pyecharts.charts import Line,Funnel
+from pyecharts import options as opts
+import pandas as pd
+import sqlite3
 from GetData_v2 import GetData
 
 
@@ -110,6 +114,7 @@ def real_info():
         logger.info(f'get offset: {offset}')
         logger.info(f'get data: {datas}')
         logger.info(f'get total: {len(datas)}')
+
     return jsonify({'total': len(datas), 'rows': datas})
 
 @app.route('/machine')
@@ -119,11 +124,53 @@ def machine_msg():
     logger.info(time)
     return render_template('machine-v1.html', current_time=time)
 
+#添加获取iops数据并传回echarts
 @app.route('/real')
 def real_msg():
     time = datetime.utcnow()
     logger.info(time)
-    return render_template('real-v1.html', current_time=time)
+
+    # d.T.to_json('./result/graph.json')
+    return render_template('real-v2.html', current_time=time)
+
+#pyecharts 输出曲线
+@app.route('/<string:hostname>',methods=['POST', 'GET'])
+def graph_data(hostname):
+    conn = sqlite3.connect('./db_data/ansible.db')
+    sql = 'select * from ansible order by date'
+    df = pd.read_sql(sql, conn)
+
+    line = Line()
+    # print(df['date'])
+    d = df.loc[df['name'] == hostname]
+    line.add_xaxis(list(d['date']))
+    line.add_yaxis('RIOPS', d['RIOPS'])
+    line.add_yaxis('WIOPS', d['WIOPS'])
+    line.set_global_opts(title_opts=opts.TitleOpts(title=hostname))
+    line.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
+
+    line.render(f"./static/graph/{hostname}.html")
+
+    return render_template(f"/graph/{hostname}.html")
+
+#echarts传递数据
+# @app.route('/<string:hostname>',methods=['POST', 'GET'])
+# def graph_data(hostname):
+#     time = datetime.utcnow()
+#     logger.info(time)
+#
+#     conn = sqlite3.connect('./db_data/ansible.db')
+#     sql = 'select * from ansible order by date'
+#     df = pd.read_sql(sql, conn)
+#
+#     d = df.loc[df['name'] == hostname]
+#     date = d['date']
+#     wiops = d['WIOPS']
+#     riops = d['RIOPS']
+#     print(date)
+#     print(wiops)
+#     print(riops)
+#     return render_template(f'{hostname}.html', current_time=time,date=date,wiops=wiops,riops=riops)
 
 @app.route('/')
 def main_page():

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+
+</head>
+<body>
+    <div id="2c4382a690164d1c99024f90edd4bb1d" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_2c4382a690164d1c99024f90edd4bb1d = echarts.init(
+            document.getElementById('2c4382a690164d1c99024f90edd4bb1d'), 'white', {renderer: 'canvas'});
+        var option_2c4382a690164d1c99024f90edd4bb1d = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "line",
+            "name": "RIOPS",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "step": false,
+            "data": [
+                [
+                    "2020-09-18 21:11:18",
+                    75.1
+                ],
+                [
+                    "2020-09-18 21:12:13",
+                    75.1
+                ],
+                [
+                    "2020-09-18 21:22:21",
+                    75.1
+                ],
+                [
+                    "2020-09-18 21:30:28",
+                    75.1
+                ],
+                [
+                    "2020-09-18 21:30:45",
+                    75.1
+                ],
+                [
+                    "2020-09-18 21:30:46",
+                    75.1
+                ],
+                [
+                    "2020-09-18 21:30:47",
+                    75.1
+                ],
+                [
+                    "2020-09-18 21:31:58",
+                    75.1
+                ],
+                [
+                    "2020-09-18 21:32:12",
+                    75.1
+                ],
+                [
+                    "2020-09-18 21:32:12",
+                    75.1
+                ],
+                [
+                    "2020-09-18 21:33:24",
+                    75.1
+                ],
+                [
+                    "2020-09-18 21:43:40",
+                    75.1
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "WIOPS",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "step": false,
+            "data": [
+                [
+                    "2020-09-18 21:11:18",
+                    9.4
+                ],
+                [
+                    "2020-09-18 21:12:13",
+                    9.4
+                ],
+                [
+                    "2020-09-18 21:22:21",
+                    9.4
+                ],
+                [
+                    "2020-09-18 21:30:28",
+                    9.4
+                ],
+                [
+                    "2020-09-18 21:30:45",
+                    9.4
+                ],
+                [
+                    "2020-09-18 21:30:46",
+                    9.4
+                ],
+                [
+                    "2020-09-18 21:30:47",
+                    9.4
+                ],
+                [
+                    "2020-09-18 21:31:58",
+                    9.4
+                ],
+                [
+                    "2020-09-18 21:32:12",
+                    9.4
+                ],
+                [
+                    "2020-09-18 21:32:12",
+                    9.4
+                ],
+                [
+                    "2020-09-18 21:33:24",
+                    9.4
+                ],
+                [
+                    "2020-09-18 21:43:40",
+                    9.4
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "RIOPS",
+                "WIOPS"
+            ],
+            "selected": {
+                "RIOPS": true,
+                "WIOPS": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "2020-09-18 21:11:18",
+                "2020-09-18 21:12:13",
+                "2020-09-18 21:22:21",
+                "2020-09-18 21:30:28",
+                "2020-09-18 21:30:45",
+                "2020-09-18 21:30:46",
+                "2020-09-18 21:30:47",
+                "2020-09-18 21:31:58",
+                "2020-09-18 21:32:12",
+                "2020-09-18 21:32:12",
+                "2020-09-18 21:33:24",
+                "2020-09-18 21:43:40"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "k8s-master",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_2c4382a690164d1c99024f90edd4bb1d.setOption(option_2c4382a690164d1c99024f90edd4bb1d);
+    </script>
+</body>
+</html>

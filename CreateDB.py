@@ -23,17 +23,15 @@ create table if not exists ansible(id int not null auto_increment,
 import sqlite3
 
 def main():
-    cx = sqlite3.connect('./db_data/ansible_real.db')
+    cx = sqlite3.connect('./db_data/ansible.db')
     # con = sqlite3.connect(":memory:")
     print("Opened database successfully")
     cu = cx.cursor()
-    cu.execute('''create table real
+    cu.execute('''create table ansible
         (name   VARCHAR(100) NOT NULL ,
          date   DATETIME NOT NULL,
          WIOPS   FLOAT ,
-         RIOPS   FLOAT ,
-         TWiops     FLOAT ,
-         TRiops     FLOAT 
+         RIOPS   FLOAT 
          )''')
     print("Table create successfully")
     cx.commit()
